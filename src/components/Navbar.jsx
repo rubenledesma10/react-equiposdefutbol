@@ -13,15 +13,15 @@ import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
 import { useNavigate } from 'react-router-dom';
 import './Navbar.css';
 
-const pages = [
-  { label: 'Home', path: '/' },
+const pages = [ //creamos un array para recorrer las paginas 
+  { label: 'Home', path: '/' }, //con el path podemos acceder a las rutas que se navegan cuando hacemos click
   { label: 'Login / Register', path: '/auth' },
   { label: 'Teams', path: '/teams' },
 ];
 
 function ResponsiveAppBar() {
-  const navigate = useNavigate();
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const navigate = useNavigate(); //inicializamos el hook de la navegacion, que nos permite redirigirnos a otra pagina
+  const [anchorElNav, setAnchorElNav] = React.useState(null); //guardamos el elemento del dom donde se ancla el menu mobile
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -73,7 +73,7 @@ function ResponsiveAppBar() {
                 '& .MuiPaper-root': { backgroundColor: '#1a1a1a' }
               }}
             >
-              {pages.map((page) => (
+              {pages.map((page) => ( //recorremos el array y crea un menu item por cada uno, y al hacer click navega a la ruta y cierra el menu
                 <MenuItem
                   key={page.label}
                   className="navbar-menu-item"

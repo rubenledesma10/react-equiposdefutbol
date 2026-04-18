@@ -1,5 +1,5 @@
 import './Auth.css'
-import { useState } from 'react'
+import { useState } from 'react' //hook de react para manejar estado local del componente
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
