@@ -33,7 +33,7 @@ function ResponsiveAppBar() {
 
   return (
     <AppBar position="static" className="navbar">
-      <Container maxWidth="xl">
+      <Container maxWidth={false} sx={{ px: 4 }}>
         <Toolbar disableGutters>
 
           {/* DESKTOP - logo e ícono */}

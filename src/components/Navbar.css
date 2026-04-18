@@ -9,6 +9,7 @@
   letter-spacing: 0.3rem !important;
   color: #90caf9 !important;
   text-decoration: none !important;
+  font-size: 1.5rem !important;
 }
 
 .navbar-icon {
@@ -19,6 +20,7 @@
   color: white !important;
   border-radius: 8px !important;
   transition: all 0.2s ease !important;
+  font-size: 1rem !important;
 }
 
 .navbar-button:hover {
