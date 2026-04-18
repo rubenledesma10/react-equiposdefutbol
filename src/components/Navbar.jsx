@@ -7,24 +7,24 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
+import { useNavigate } from 'react-router-dom';
+import './Navbar.css';
 
-const pages = ['Home','Login / Register', 'Teams'];
-
+const pages = [
+  { label: 'Home', path: '/' },
+  { label: 'Login / Register', path: '/auth' },
+  { label: 'Teams', path: '/teams' },
+];
 
 function ResponsiveAppBar() {
+  const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
   };
 
   const handleCloseNavMenu = () => {
@@ -32,32 +32,27 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" className="navbar">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <SportsSoccerIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+
+          {/* DESKTOP - logo e ícono */}
+          <SportsSoccerIcon className="navbar-icon" sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
+            href="/"
+            className="navbar-logo"
+            sx={{ mr: 4, display: { xs: 'none', md: 'flex' } }}
           >
             FÚTBOL
           </Typography>
 
+          {/* MOBILE - menú hamburguesa */}
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
-              aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
@@ -68,79 +63,59 @@ function ResponsiveAppBar() {
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
+              anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
               keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
+              transformOrigin={{ vertical: 'top', horizontal: 'left' }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{ display: { xs: 'block', md: 'none' } }}
+              sx={{
+                display: { xs: 'block', md: 'none' },
+                '& .MuiPaper-root': { backgroundColor: '#1a1a1a' }
+              }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
+                <MenuItem
+                  key={page.label}
+                  className="navbar-menu-item"
+                  onClick={() => { navigate(page.path); handleCloseNavMenu(); }}
+                >
+                  <Typography sx={{ textAlign: 'center' }}>{page.label}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          <SportsSoccerIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+
+          {/* MOBILE - logo e ícono */}
+          <SportsSoccerIcon className="navbar-icon" sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
+            href="/"
+            className="navbar-logo"
+            sx={{ mr: 2, display: { xs: 'flex', md: 'none' }, flexGrow: 1 }}
           >
-            LOGO
+            FÚTBOL
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+
+          {/* DESKTOP - botones de navegación */}
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, gap: 1 }}>
             {pages.map((page) => (
               <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                key={page.label}
+                className="navbar-button"
+                onClick={() => navigate(page.path)}
+                sx={{ my: 2, display: 'block', px: 2 }}
               >
-                {page}
+                {page.label}
               </Button>
             ))}
           </Box>
-          <Box sx={{ flexGrow: 0 }}>
-            
-     
-            
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-            >
-            </Menu>
-          </Box>
+
         </Toolbar>
       </Container>
     </AppBar>
   );
 }
+
 export default ResponsiveAppBar;
