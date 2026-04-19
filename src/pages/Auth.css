@@ -1,0 +1,62 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 60px 40px;
+  min-height: calc(100vh - 64px);
+  background-color: #121212;
+}
+
+.auth-card {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 20px !important;
+  background-color: #1e1e1e !important;
+  padding: 40px !important;
+  border-radius: 12px !important;
+  width: 100%;
+  max-width: 700px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+.auth-title {
+  color: #90caf9 !important;
+  font-weight: 700 !important;
+  text-align: center;
+}
+
+.auth-input .MuiOutlinedInput-root {
+  color: white !important;
+}
+
+.auth-input .MuiOutlinedInput-notchedOutline {
+  border-color: #444 !important;
+}
+
+.auth-input .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #90caf9 !important;
+}
+
+.auth-input .MuiInputLabel-root {
+  color: #aaa !important;
+}
+
+.auth-button {
+  background-color: #90caf9 !important;
+  color: #121212 !important;
+  font-weight: 700 !important;
+  padding: 10px !important;
+  border-radius: 8px !important;
+}
+
+.auth-button:hover {
+  background-color: #64b5f6 !important;
+}
+
+.auth-divider {
+  width: 1px;
+  background-color: #333;
+  align-self: stretch;
+  margin: 20px 0;
+}
