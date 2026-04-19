@@ -1,5 +1,7 @@
+import * as React from 'react';
 import './Home.css'
 import argentina from '../assets/argentina.png'
+import { useState } from 'react' 
 
 function Home() {
   return (

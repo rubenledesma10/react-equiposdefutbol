@@ -85,7 +85,7 @@ function Teams() {
 
   return (
     <div className="teams-container">
-      <h1 className="teams-title">⚽ Equipos de Fútbol Argentino</h1>
+      <h1 className="teams-title">⚽ Algunos equipos de Fútbol Argentino</h1>
 
       <div className="equipos-grid">
         {Object.entries(equipos).map(([key, equipo]) => (
