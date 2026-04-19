@@ -46,7 +46,7 @@ function Home() {
           <div className="card">
             <span>⚽</span>
             <h3>Equipos</h3>
-            <p>Boca, River, Independiente, Racing, San Lorenzo, Independiente Rivadavia y Godoy Cruz.</p>
+            <p>Boca, River, Independiente, Racing, San Lorenzo, Ind. Rivadavia y Godoy Cruz.</p>
           </div>
           <div className="card">
             <span>🏆</span>

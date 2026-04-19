@@ -1,0 +1,168 @@
+.teams-container {
+  padding: 60px 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.teams-title {
+  color: #FFD700;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+.equipos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.equipo-card-mini {
+  background: #1a1a1a;
+  border: 2px solid #333;
+  border-radius: 12px;
+  padding: 20px;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: #fff;
+}
+
+.equipo-card-mini:hover {
+  border-color: #FFD700;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.2);
+}
+
+.equipo-card-mini.activo {
+  border-color: #FFD700;
+  background: #2a2a0a;
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+}
+
+.escudo-mini {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.equipo-detalle {
+  background: #1a1a1a;
+  border: 2px solid #FFD700;
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+  box-shadow: 0 10px 40px rgba(255, 215, 0, 0.2);
+}
+
+.equipo-escudo {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 4px 12px rgba(255,215,0,0.4));
+  transition: transform 0.3s;
+}
+
+.equipo-escudo:hover {
+  transform: scale(1.1);
+}
+
+.equipo-nombre {
+  color: #FFD700;
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+}
+
+.equipo-reseña {
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.partidos-titulo {
+  color: #FFD700;
+  font-size: 1.3rem;
+  margin: 30px 0 15px;
+}
+
+.partidos-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.partido-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 12px 20px;
+}
+
+.partido-fecha {
+  color: #888;
+  font-size: 0.85rem;
+}
+
+.partido-rival {
+  color: #fff;
+  font-weight: bold;
+}
+
+.partido-resultado {
+  color: #FFD700;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.solapas {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.solapa-btn {
+  background: #111;
+  color: #fff;
+  border: 2px solid #333;
+  border-radius: 8px;
+  padding: 10px 24px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.solapa-btn:hover {
+  border-color: #FFD700;
+  color: #FFD700;
+}
+
+.solapa-btn.activa {
+  background: #FFD700;
+  color: #000;
+  border-color: #FFD700;
+  font-weight: bold;
+}
+
+.partido-torneo {
+  color: #888;
+  font-size: 0.8rem;
+  font-style: italic;
+}
